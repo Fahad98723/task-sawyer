@@ -83,10 +83,14 @@ fetch('https://api.mocki.io/v2/fda114b9')
 
 const cellClicked = (params) => {
   // params.node.setSelected(true)
-  console.log(params.data.bid.currentCompany);
-  dispatch(setTableData(params.data.bid.currentCompany));
-  history.push('/bidsId')
-  
+  console.log(params);
+  if (params.colDef.headerName === 'NSN' || params.colDef.headerName === 'Comment' || params.colDef.headerName === 'Tags' ) {
+    return;
+  }
+  else{
+    dispatch(setTableData(params.data.bid.currentCompany));
+    history.push('/bidsId')
+  }  
 }
   return (
     <div>
