@@ -23,6 +23,7 @@ html {
     font-size: 62.5%;
     font-family: 'Inter var', Roboto, Helvetica Neue, Arial, sans-serif;
     background-color: #121212;
+    text-decoration: none;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
     line-height: 1.4;
     overflow-x: hidden;
     font-feature-settings: "salt";
+ 
 }
 
 html, body {
@@ -147,6 +149,8 @@ input:-webkit-autofill:active
 :focus {
     outline-color: transparent;
 }
+
+
 
 /*fullcalendar Fix*/
 .fc-scrollgrid-section-liquid {

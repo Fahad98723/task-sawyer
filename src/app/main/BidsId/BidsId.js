@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import FusePageSimple from '@fuse/core/FusePageSimple';
-import DemoContent from '@fuse/core/DemoContent';
-import BidsContent from '@fuse/core/BidsContent';
+import { useSelector } from 'react-redux';
+
 
 const Root = styled(FusePageSimple)(({ theme }) => ({
   '& .FusePageSimple-header': {
@@ -18,8 +18,11 @@ const Root = styled(FusePageSimple)(({ theme }) => ({
 }));
 
 function BidsPage(props) {
-  const { t } = useTranslation('Bids Page');
+  const { t } = useTranslation('Bids Id Page');
 
+  const {tabledata} = useSelector((state) => state.fuse.navbar)
+
+  console.log(tabledata);
   return (
     <Root
     //   header={
@@ -29,9 +32,15 @@ function BidsPage(props) {
     //   }
       content={
         <div className="p-24">
-          <h4>Bids</h4>
+          <h4>Data Showing By Click</h4>
           <br />
-          <BidsContent />
+          <p>Id : {tabledata?.id}</p>
+          <p>Name : {tabledata?.name}</p>
+          <p>Comment : {tabledata?.comment}</p>
+          <p>Cage : {tabledata?.cage}</p>
+          <p>Comptype Id : {tabledata?.comType?.id}</p>
+          <p>Comptype Name : { tabledata?.comType?.name}</p>
+         
         </div>
       }
       scroll="content"

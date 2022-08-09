@@ -25,6 +25,14 @@ const navigationConfig = [
     icon: 'heroicons-outline:star',
     url: 'bids',
   },
+  {
+    id: 'bidsId-component',
+    title: 'bidsId',
+    translate: 'bidsId',
+    type: 'item',
+    icon: 'heroicons-outline:star',
+    url: 'bidsid',
+  },
 ];
 
 export default navigationConfig;

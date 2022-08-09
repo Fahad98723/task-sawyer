@@ -5,7 +5,8 @@ const navbarSlice = createSlice({
   initialState: {
     open: true,
     mobileOpen: false,
-    navbardata: '',
+    navbardata: 'TACOM',
+    tabledata: {},
   },
   reducers: {
     navbarToggleFolded: (state, action) => {
@@ -38,6 +39,9 @@ const navbarSlice = createSlice({
     addNavigationData: (state, action) => {
       state.navbardata = action.payload;
     },
+    setTableData: (state, action) => {
+      state.tabledata = action.payload;
+    },
   },
 });
 
@@ -52,6 +56,8 @@ export const {
   navbarCloseMobile,
   navbarToggleMobile,
   addNavigationData,
+  navbardata,
+  setTableData,
 } = navbarSlice.actions;
 
 export const selectFuseNavbar = ({ fuse }) => fuse.navbar;

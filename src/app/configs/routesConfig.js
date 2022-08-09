@@ -8,19 +8,26 @@ import SignOutConfig from '../main/sign-out/SignOutConfig';
 import Error404Page from '../main/404/Error404Page';
 import ExampleConfig from '../main/example/ExampleConfig';
 import BidsConfig from '../main/Bids/BidsConfig';
+import BidsIdConfig from '../main/BidsId/BidsIdConfig';
 
-const routeConfigs = [ExampleConfig, SignOutConfig, SignInConfig, SignUpConfig, BidsConfig];
+
+const routeConfigs = [ExampleConfig, SignOutConfig, SignInConfig, SignUpConfig, BidsConfig,BidsIdConfig];
 
 const routes = [
   ...FuseUtils.generateRoutesFromConfigs(routeConfigs, settingsConfig.defaultAuth),
+  // {
+  //   path: '/',
+  //   element: <Navigate to="/example" />,
+  //   auth: settingsConfig.defaultAuth,
+  // },
   {
     path: '/',
-    element: <Navigate to="/example" />,
+    element: <Navigate to="/bids" />,
     auth: settingsConfig.defaultAuth,
   },
   {
-    path: '/bids',
-    element: <Navigate to="/bids" />,
+    path: '/bidsId',
+    element: <Navigate to="/bidsId" />,
     auth: settingsConfig.defaultAuth,
   },
   {
